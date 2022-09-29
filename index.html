@@ -1,0 +1,173 @@
+<html>
+
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<title>Solacon examples</title>
+	<script src="utils/Solacon.svg"></script>
+
+	<script>
+
+		var sol1;
+		var sol2;
+		var sol3;
+		var sol4;
+		var sol5;
+		var sol6;
+		var sol7;
+		var sol8;
+		var sol9;
+		var sol10;
+		function init() {
+			sol1 = document.getElementById('sol-1');
+			sol2 = document.getElementById('sol-2');
+			sol3 = document.getElementById('sol-3');
+			sol4 = document.getElementById('sol-4');
+			sol5 = document.getElementById('sol-5');
+			sol6 = document.getElementById('sol-6');
+			sol7 = document.getElementById('sol-7');
+			sol8 = document.getElementById('sol-8');
+			sol9 = document.getElementById('sol-9');
+			sol10 = document.getElementById('sol-10');
+			var ds = new Date().toLocaleString();
+			timeLoop();
+		}
+
+		function timeLoop() {
+			window.setTimeout(function () {
+				var ds = new Date().toLocaleString();
+				generateSol(sol2, ds+(Math.random()*10**6), "64, 164, 216");
+				generateSol(sol3, ds+(Math.random()*10**6), "51, 190, 184");
+				generateSol(sol4, ds+(Math.random()*10**6), "178, 194, 37");
+				generateSol(sol5, ds+(Math.random()*10**6), "254, 204, 47");
+				generateSol(sol6, ds+(Math.random()*10**6), "249, 162, 40");
+				generateSol(sol7, ds+(Math.random()*10**6), "255, 110, 0");
+				generateSol(sol8, ds+(Math.random()*10**6), "234, 85, 70");
+				generateSol(sol9, ds+(Math.random()*10**6), "244, 109, 117");
+				generateSol(sol10, ds+(Math.random()*10**6), "163, 99, 216");
+				timeLoop();
+			}, 2170);
+		}
+
+		function generateSol(sol, ds, ink) {
+			sol.setRGB(ink);
+			sol.generate(ds);
+		}
+
+		function alter(newText) {
+			sol1.generate(newText);
+			sol1.setRGBFromHash();
+			sol1.refresh();
+		}
+
+	</script>
+
+	<style>
+		body {
+			font-family: arial, sans;
+		}
+
+		div.col {
+			margin: 20px;
+			padding: 20px;
+			background-color: #EEE;
+			border-radius: 10px;
+			display: inline-block;
+		}
+
+		div.bigCol {
+			margin: 20px;
+			padding: 20px;
+			background-color: #EEE;
+			border-radius: 10px;
+			display: inline-block;
+			height: 320px;
+		}
+
+		#clock {
+			font-size: 0.8em;
+		}
+	</style>
+
+</head>
+
+<body onload="init()">
+
+	<div style="display:flex; flex-direction: column; margin: 0 5% 0 5%; justify-content: center;">
+		<div class="bigCol">
+			<object type="image/svg+xml" style="width: 100%; height: 100%;" id="sol-1"
+				data="utils/solacon.svg" data-value="Hello world." data-rgb="0, 30, 255"
+				title="A visual hash representation of the string: 860116106"></object><br>
+			<input style="margin: 0 0 0 44%" placeholder="some text to change" onchange="alter(this.value);">
+		</div>
+		<div>
+
+			<div class="col">
+				<object type="image/svg+xml" style="width: 320px; height: 320px;" id="sol-2"
+					data="utils/solacon.svg"
+					title="A visual hash representation of the string: 1333558379"></object><br>
+			</div>
+
+
+			<div class="col">
+				<object type="image/svg+xml" style="width: 320px; height: 320px;" id="sol-3"
+					data="utils/solacon.svg"
+					title="A visual hash representation of the string: 1333558379"></object><br>
+			</div>
+
+
+			<div class="col">
+				<object type="image/svg+xml" style="width: 320px; height: 320px;" id="sol-4"
+					data="utils/solacon.svg"
+					title="A visual hash representation of the string: 1333558379"></object><br>
+			</div>
+
+
+			<div class="col">
+				<object type="image/svg+xml" style="width: 320px; height: 320px;" id="sol-5"
+					data="utils/solacon.svg"
+					title="A visual hash representation of the string: 1333558379"></object><br>
+			</div>
+
+
+			<div class="col">
+				<object type="image/svg+xml" style="width: 320px; height: 320px;" id="sol-6"
+					data="utils/solacon.svg"
+					title="A visual hash representation of the string: 1333558379"></object><br>
+			</div>
+
+
+			<div class="col">
+				<object type="image/svg+xml" style="width: 320px; height: 320px;" id="sol-7"
+					data="utils/solacon.svg"
+					title="A visual hash representation of the string: 1333558379"></object><br>
+			</div>
+
+
+			<div class="col">
+				<object type="image/svg+xml" style="width: 320px; height: 320px;" id="sol-8"
+					data="utils/solacon.svg"
+					title="A visual hash representation of the string: 1333558379"></object><br>
+			</div>
+
+
+			<div class="col">
+				<object type="image/svg+xml" style="width: 320px; height: 320px;" id="sol-9"
+					data="utils/solacon.svg"
+					title="A visual hash representation of the string: 1333558379"></object><br>
+			</div>
+
+
+			<div class="col">
+				<object type="image/svg+xml" style="width: 320px; height: 320px;" id="sol-10"
+					data="utils/solacon.svg"
+					title="A visual hash representation of the string: 1333558379"></object><br>
+			</div>
+
+		</div>
+	</div>
+
+
+
+</body>
+
+</html>
